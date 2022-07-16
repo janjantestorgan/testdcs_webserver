@@ -6,9 +6,9 @@ setup(
     packages=find_packages(exclude=("unittests",)),
     # packages=find_packages(),
     # include_package_data=True,
-    # python_requires=">=3.8",
-    # install_requires=[
-    #    "paho-mqtt",
-    #    "pyserial",
-    # ],
+     python_requires=">=3.8",
+     install_requires=[
+        "paho-mqtt",
+        "pyserial",
+     ],
 )
