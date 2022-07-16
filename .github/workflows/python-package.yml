@@ -32,11 +32,11 @@ jobs:
         env
     - name: Install dependencies
       run: |
-        pip install -r requirements/local.txt
+        pip install -r web_server/requirements/local.txt
         pip install -e .
     - name: Run black --check .
       run: black --check . --exclude _actions
     - name: Test with pytest
       run: |
-        cd unittests
+        cd web_server/unittests
         pytest
