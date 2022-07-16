@@ -32,7 +32,8 @@ jobs:
         env
     - name: Install dependencies
       run: |
-        pip install -r web_server/requirements/local.txt
+        cd web_server
+        pip install -r requirements/local.txt
         pip install -e .
     - name: Run black --check .
       run: black --check . --exclude _actions
