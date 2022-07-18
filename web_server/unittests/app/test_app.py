@@ -5,6 +5,7 @@ from fastapi import status
 user = "candan"
 password = "cms"
 
+
 @pytest.fixture
 def app_client(monkeypatch):
     monkeypatch.setenv("APP_USER", user)
@@ -24,6 +25,7 @@ def test_root(app_client):
     assert json["user"] == user
     assert json["password"] == password
 
+
 def test_data(app_client):
     the_data = [27., 51, 18.1, 40.]
     response = app_client.post("/data", json={"data": the_data})
@@ -35,4 +37,3 @@ def test_wrong_data(app_client):
     the_data = [27., 51, 18.1]
     response = app_client.post("/data", json={"data": the_data})
     assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
-
