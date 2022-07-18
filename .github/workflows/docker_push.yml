@@ -11,6 +11,6 @@ jobs:
         run: docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d 
       - name: Test docker compose ps
         run: docker compose ps
-      - name: Test curl command
-        run: curl -s --retry 10 --retry-connrefused http://localhost:8001/
+      - name: Test uvicorn command
+        run: python3 -m uvicorn app_test:app --reload 
         #run: docker run --network container:webapp-frontend appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
