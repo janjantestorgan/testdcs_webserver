@@ -27,8 +27,8 @@ services:
       - "8001"
     links:
       - mosquitto
-    command: ["uvicorn", "web_server.app_mqtt:app", "--host", "0.0.0.0"]
-    #command: ["uvicorn", "web_server.app_test:app", "--host", "0.0.0.0"]
+    #command: ["uvicorn", "web_server.app_mqtt:app", "--host", "0.0.0.0"]
+    command: ["uvicorn", "web_server.app_test:app", "--host", "0.0.0.0"]
     volumes:
       - web_server:/code
 
