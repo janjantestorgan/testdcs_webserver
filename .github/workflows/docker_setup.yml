@@ -34,8 +34,8 @@ jobs:
           name:  list images
           #uses: docker/build-push-action@v2
           run: docker images
-    container:
-      image: testdcs_webserver_web_server:latest    
+    #container:
+    #  image: testdcs_webserver_web_server:latest    
 
     services:
       service-name-1:
