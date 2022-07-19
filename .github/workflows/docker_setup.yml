@@ -36,12 +36,12 @@ jobs:
           run: docker images
         -
           name:  docker push
-          #uses: docker/build-push-action@v2
-          run: docker push testdcs_webserver_web_server:latest
+          uses: docker/build-push-action@v2
+          #run: docker push testdcs_webserver_web_server:latest
           
-          #with:
+          with:
           #  context: ./web_server
           #  file: ./web_server/Dockerfile
-          #  push: true
-          #  tags: ${{ secrets.DOCKER_USERNAME }}/webserver_test:latest
+            push: true
+            tags: ${{ secrets.DOCKER_USERNAME }}/testdcs_webserver_web_server:latest
             
