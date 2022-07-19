@@ -26,7 +26,7 @@ jobs:
             file: ./web_server/Dockerfile
             push: true
             tags: ${{ secrets.DOCKER_USERNAME }}/webserver_test:latest
-          -
+        -
           name:  list images
           run: docker images
             
