@@ -30,7 +30,8 @@ jobs:
           name:  push
           #uses: docker/build-push-action@v2
           run: docker-compose push
-          tags: ${{ secrets.DOCKER_USERNAME }}/testdcs_webserver_web_server_1:latestweb
+          with:
+            tags: ${{ secrets.DOCKER_USERNAME }}/testdcs_webserver_web_server_1:latestweb
           #with:
           #  context: ./web_server
           #  file: ./web_server/Dockerfile
