@@ -43,7 +43,8 @@ jobs:
         ports:
            - 8001:8000   
       steps:
-        - name: Get from service-1
+        - 
+          name: Get from service-1
           run: http://localhost:8001  
           #with:
           #  context: ./web_server
