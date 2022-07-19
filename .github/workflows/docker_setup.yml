@@ -37,7 +37,7 @@ jobs:
         -
           name:  docker push
           #uses: docker/build-push-action@v2
-          run: docker push testdcs_webserver_web_server_1:latest
+          run: docker push testdcs_webserver_web_server:latest
           
           #with:
           #  context: ./web_server
