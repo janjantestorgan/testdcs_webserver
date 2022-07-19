@@ -42,9 +42,9 @@ jobs:
         image: secrets.DOCKER_USERNAME :testdcs_webserver_web_server
         ports:
            - 8001:8000   
-    steps:
-      - name: Get from service-1
-        run: http://localhost:8001  
+      steps:
+        - name: Get from service-1
+          run: http://localhost:8001  
           #with:
           #  context: ./web_server
           #  file: ./web_server/Dockerfile
