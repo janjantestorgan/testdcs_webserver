@@ -27,6 +27,7 @@ jobs:
             #push: true
             #tags: ${{ secrets.DOCKER_USERNAME }}/webserver_test:latest
             run: docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d 
-          - name: Test docker compose ps
-            run: docker compose ps
+        - 
+          name: Test docker compose ps
+          run: docker compose ps
             
