@@ -4,10 +4,10 @@
 name: Python package
 
 on:
-  #pull_request:
-  #  branches: [ main, dev ]
-  push:
-    branches: [main, dev]
+  pull_request:
+    branches: [ main, dev ]
+  #push:
+  #  branches: [main, dev]
 
 jobs:
   build:
@@ -35,6 +35,14 @@ jobs:
         cd web_server
         pip install -r requirements/local.txt
         pip install -e .
+    - name: Set up Dockercompose Build
+      run: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build
+      
+    - name:  list containers
+      run: docker-compose ps
+    - name:  list images
+      run: docker images
+    
     - name: Run black --check .
       run: black --check . --exclude _actions
     - name: Test with pytest
