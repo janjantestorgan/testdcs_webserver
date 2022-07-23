@@ -41,10 +41,10 @@ jobs:
     - name: Set up Dockercompose Build
       run: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build
       
-    - name:  list containers
+    - name:  list docker containers
       run: docker-compose ps
 
-    - name:  list images
+    - name:  list docker images
       run: docker images
     
     - name: Run black --check .
