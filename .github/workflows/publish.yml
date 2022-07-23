@@ -16,16 +16,15 @@ jobs:
         echo $PAT | docker login ghcr.io -u janjantestorgan --password-stdin
       env:
         PAT: ${{ secrets.PAT }}
-
-
+        
     - name: Build and push
     - uses: docker/build-push-action@v2
       with:
         context: ./web_server
         file: ./web_server/Dockerfile
           
-    - name: docker images
-      run: docker images 
+    #- name: docker images
+    #  run: docker images 
       
     #-name : docker image tag-run-push 
     #  run: |
