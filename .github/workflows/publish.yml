@@ -19,8 +19,11 @@ jobs:
     - name: Build the hello-world Docker image
       run: |
         cd web_server
-        docker build -t python3:test_webserver .
-        docker images
+        docker build . --tag ghcr.io/janjantestorgan/testdcs_webserver/testdcs_webserver_web_server:latest
+        docker images ghcr.io/janjantestorgan/testdcs_webserver/
+        docker push ghcr.io/janjantestorgan/testdcs_webserver/testdcs_webserver_web_server:latest
+    
+    #docker run -it testdcs_webserver_web_server bash
         
 # --tag ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
 #        docker run ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
