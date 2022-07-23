@@ -19,10 +19,16 @@ jobs:
     - name: Build the hello-world Docker image
       run: |
         cd web_server
-        docker build . --tag ghcr.io/janjantestorgan/testdcs_webserver/testdcs_webserver_web_server:latest
-        docker run ghcr.io/janjantestorgan/testdcs_webserver/testdcs_webserver_web_server:latest
-        docker push ghcr.io/janjantestorgan/testdcs_webserver/testdcs_webserver_web_server:latest
-        docker images 
+        docker build -t test_web_server:latest .
+        docker images
+        docker push test_web_server:latest
+        
+      
+      
+      #docker build . --tag ghcr.io/janjantestorgan/testdcs_webserver/test_web_server:latest
+        #docker run ghcr.io/janjantestorgan/testdcs_webserver/test_web_server:latest
+        #docker push ghcr.io/janjantestorgan/testdcs_webserver/test_web_server:latest
+        #docker images 
     
     #docker run -it testdcs_webserver_web_server bash
         
