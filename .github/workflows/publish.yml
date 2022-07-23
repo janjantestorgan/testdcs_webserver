@@ -4,21 +4,28 @@ on: [push]
   #  branches: [main, dev]
 
 jobs:
-  publish-hello-world-image:
+  publish-docker-image:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout 
     - uses: actions/checkout@v2
 
-    - name: login github container registry
+    - name: Login github container registry
       run: |
         echo $PAT | docker login ghcr.io -u janjantestorgan --password-stdin
       env:
         PAT: ${{ secrets.PAT }}
 
-    - name: Build the hello-world Docker image
+    - name: Build Docker image and push
       run: |
         cd web_server
-        docker build . --tag ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
-        docker run ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
-        docker push ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
+        docker build . 
+    -name: docker images
+      run: docker images ls 
+      
+    #-name : docker image tag-run-push 
+    #  run: |
+    #    docker tag ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
+    #    docker run ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
+    #    docker push ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
