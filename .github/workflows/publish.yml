@@ -22,7 +22,7 @@ jobs:
         docker build . --tag ghcr.io/janjantestorgan/testdcs_webserver/testdcs_webserver_web_server:latest
         docker run ghcr.io/janjantestorgan/testdcs_webserver/testdcs_webserver_web_server:latest
         docker push ghcr.io/janjantestorgan/testdcs_webserver/testdcs_webserver_web_server:latest
-        docker images ghcr.io/janjantestorgan/testdcs_webserver/
+        docker images 
     
     #docker run -it testdcs_webserver_web_server bash
         
