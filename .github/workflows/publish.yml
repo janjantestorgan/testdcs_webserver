@@ -29,6 +29,7 @@ jobs:
       #  context: ./web_server
       #  file: ./web_server/Dockerfile
       run: |
-        docker /web_server/build . --tag ghcr.io/cdozen/hello-world:latest
+        docker /web_server/build . 
+        docker /web_server/tag ghcr.io/cdozen/hello-world:latest
         docker /web_server/run ghcr.io/cdozen/hello-world:latest
         docker /web_server/push ghcr.io/cdozen/hello-world:latest
