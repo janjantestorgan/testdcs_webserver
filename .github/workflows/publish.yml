@@ -22,7 +22,7 @@ jobs:
         cd web_server
         docker build . 
     - name: docker images
-      run: docker images ls 
+      run: docker images 
       
     #-name : docker image tag-run-push 
     #  run: |
