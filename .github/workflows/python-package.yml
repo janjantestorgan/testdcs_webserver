@@ -35,6 +35,10 @@ jobs:
         cd web_server
         pip install -r requirements/local.txt
         pip install -e .
+    
+    - name: Run black --check .
+      run: black --check . --exclude _actions
+
     - name: Set up Dockercompose Build
       run: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build
       
@@ -42,9 +46,7 @@ jobs:
       run: docker-compose ps
     - name:  list images
       run: docker images
-    
-    - name: Run black --check .
-      run: black --check . --exclude _actions
+
     - name: Test with pytest
       run: |
         cd web_server/unittests
