@@ -1,6 +1,6 @@
 FROM python:3.9
 #LABEL org.opencontainers.image.source="https://github.com/cdozen/docker-hello-world"
-LABEL org.opencontainers.image.source="https://github.com/janjantestorgan/testdcs_webserver/""
+LABEL org.opencontainers.image.source="https://github.com/janjantestorgan/testdcs_webserver/"
 RUN apt-get update && apt-get -y upgrade
 
 WORKDIR /code
