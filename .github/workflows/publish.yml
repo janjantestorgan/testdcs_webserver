@@ -20,7 +20,7 @@ jobs:
       run: |
         cd web_server
         docker build . 
-        
+        docker images
 # --tag ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
 #        docker run ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
 #        docker push ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
