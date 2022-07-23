@@ -21,8 +21,8 @@ jobs:
         cd web_server
         docker build -t test_web_server:latest .
         docker images
-        docker push test_web_server:latest
-        
+        docker push ghcr.io/janjantestorgan/testdcs_webserver/test_web_server:latest
+        docker images ghcr.io/janjantestorgan/testdcs_webserver/
       
       
       #docker build . --tag ghcr.io/janjantestorgan/testdcs_webserver/test_web_server:latest
