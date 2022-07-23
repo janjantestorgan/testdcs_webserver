@@ -16,9 +16,9 @@ jobs:
       env:
         PAT: ${{ secrets.PAT }}
 
-    #- name: Build the hello-world Docker image
-     # run: |
-     #   cd web_server
-     #   docker build . --tag ghcr.io/cdozen/hello-world:latest
-     #   docker run ghcr.io/cdozen/hello-world:latest
-     #   docker push ghcr.io/cdozen/hello-world:latest
+    - name: Build the hello-world Docker image
+      run: |
+        cd web_server
+        docker build . --tag ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
+        docker run ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
+        docker push ghcr.io/janjantestorgan/testdcs_webserver/hello-world:latest
