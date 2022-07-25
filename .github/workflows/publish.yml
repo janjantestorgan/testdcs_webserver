@@ -26,9 +26,9 @@ jobs:
     - name: Build the test_ghcr Docker image
       run: |
         cd web_server
-        docker build . --tag ghcr.io/janjantestorgan/testdcs_webserver/test_webs:latest
-        docker run ghcr.io/janjantestorgan/testdcs_webserver/test_webs:latest
-        docker push ghcr.io/janjantestorgan/testdcs_webserver/test_webs:latest
+        docker build . --tag ghcr.io/janjantestorgan/testdcs_webserver/test_web:latest
+        docker run ghcr.io/janjantestorgan/testdcs_webserver/test_web:latest
+        docker push ghcr.io/janjantestorgan/testdcs_webserver/test_web:latest
         
       # docker images 
     
