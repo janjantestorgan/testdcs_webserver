@@ -10,18 +10,18 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Login to GitHub Container Registry
-      uses: actions/labeler@v2   #docker/login-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
+    #- name: Login to GitHub Container Registry
+    #  uses: docker/login-action@v1
+    #  with:
+    #    registry: ghcr.io
+    #    username: ${{ github.actor }}
+    #    password: ${{ secrets.PAT }}
 
-    #- name: login github container registry
-    #  run: |
-    #    echo $PAT | docker login ghcr.io -u janjantestorgan --password-stdin
-    #  env:
-    #    PAT: ${{ secrets.PAT }}
+    - name: login github container registry
+      run: |
+        echo $PAT | docker login ghcr.io -u janjantestorgan --password-stdin
+      env:
+        PAT: ${{ secrets.PAT }}
 
     - name: Build the test_ghcr Docker image
       run: |
