@@ -13,9 +13,9 @@ jobs:
     - name: Login to GitHub Container Registry
       uses: actions/labeler@v2   #docker/login-action@v1
       with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        #registry: ghcr.io
+        #username: ${{ github.actor }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
 
     #- name: login github container registry
     #  run: |
