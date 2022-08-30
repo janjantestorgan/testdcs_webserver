@@ -4,8 +4,8 @@
 name: Python package
 
 on:
-  pull_request:
-    branches: [ main, dev ]
+  push:
+    branches: [ dev ]
 
 jobs:
   build:
@@ -47,7 +47,7 @@ jobs:
       run: | 
         cd docker/test_tracker_dcs_web
         docker-compose up -d 
-        docker-compose ps 
+        docker-compose ps -a
         cd -
     - name: Run black --check .
       run: black --check . --exclude _actions
