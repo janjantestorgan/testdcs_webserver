@@ -11,27 +11,21 @@ def test_root():
 
 def test_data_path():
     dummy = abspath_data("dummy_files/test.txt")
-    with open (dummy) as f:
+    with open(dummy) as f:
         content = f.readlines()
-        result = {}
-        #n = {}  # pt100_id
+        data = {}
+        # n = {}  # pt100_id
         for x in content:
             sublist = {}
-            #n["id"] = x.split("\t")[2]
+            # n["id"] = x.split("\t")[2]
             sublist["true_module"] = x.split("\t")[0]
             sublist["fake_module"] = x.split("\t")[1]
-            #n["modules"] = sublist  # 1. option
-            #print(n)
-            my_index = x.split("\t")[2]
-            result[int(my_index)] = sublist  # 2.option (turn string to int)
+            # n["modules"] = sublist  # 1. option
+            # print(n)
+            data_index = x.split("\t")[2]
+            data[int(data_index)] = sublist  # 2.option (turn string to int)
 
         f.close()
-        print(result)
+        print("reading data...")
+        print(data)
     assert dummy.exists()
-
-
-
-
-
-
-         
