@@ -17,16 +17,15 @@ def test_data_path():
         # n = {}  # pt100_id
         for x in content:
             sublist = {}
-            data_index = x.split("\t")[2]
             # n["id"] = x.split("\t")[2]
             sublist["true_module"] = x.split("\t")[0]
             sublist["fake_module"] = x.split("\t")[1]
             # n["modules"] = sublist  # 1. option
             # print(n)
-            
+            data_index = x.split("\t")[2]
             data[int(data_index)] = sublist  # 2.option (turn string to int)
 
         f.close()
-        print("reading data...")
+        print('reading data...')
         print(data)
     assert dummy.exists()
