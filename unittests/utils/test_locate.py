@@ -26,6 +26,6 @@ def test_data_path():
             data[int(data_index)] = sublist  # 2.option (turn string to int)
 
         f.close()
-        print('reading data...')
+        print("reading data...")
         print(data)
     assert dummy.exists()
