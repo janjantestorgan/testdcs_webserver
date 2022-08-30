@@ -41,8 +41,8 @@ jobs:
         cd -
     - name: Run black --check .
       run: black --check . --exclude _actions
-    #- name: Test with pytest
-    #  run: |
-    #    cd unittests
-    #    pytest
+    - name: Test with pytest
+      run: |
+        cd unittests
+        pytest
 
