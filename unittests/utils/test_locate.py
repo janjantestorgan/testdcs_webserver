@@ -12,7 +12,8 @@ def test_root():
 def test_data_path():
     dummy = abspath_data("dummy_files/test.txt")
     assert dummy.exists()
-def open_data():
+    print(dummy)
+''' def open_data():
     with open("dummy_files/test.txt") as f:
         contents = f.readlines()
         # print(contents)
@@ -31,3 +32,4 @@ def open_data():
 
         f.close()
         print(result)
+'''
