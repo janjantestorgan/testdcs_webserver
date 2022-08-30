@@ -3,7 +3,8 @@ import tracker_dcs_web
 
 
 def abspath_root():
-    return pathlib.Path(tracker_dcs_web.__file__).parents[1]
+    return pathlib.Path(tracker_dcs_web.__file__).resolve().parents[1]
+    
 
 
 def abspath_data(path):
