@@ -12,7 +12,7 @@ def test_root():
 def test_data_path():
     dummy = abspath_data("dummy_files/test.txt")
     assert dummy.exists()
-    with open("dummy_files/test.txt") as f:
+    with open("dummy") as f:
         contents = f.readlines()
         # print(contents)
         result = {}
